@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./haydenfoster.html:/usr/share/nginx/html/index.html:ro
+      - ./assets:/usr/share/nginx/html/assets:ro
+    restart: unless-stopped
